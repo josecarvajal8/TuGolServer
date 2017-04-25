@@ -10,10 +10,11 @@ function signIn(req,res){
 
 function signUp(req,res){
     const new_user = new Usuario({
+        nombre: req.body.nombre,
         usuario: req.body.usuario,
         contrasena: req.body.contrasena,
-        nombre: req.body.nombre,
-        tipo: req.body.tipo
+        telefono: req.body.telefono,
+        correo: req.body.correo,    
     });
     console.log(req.body);
     new_user.save(function(err){
